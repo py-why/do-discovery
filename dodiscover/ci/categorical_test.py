@@ -57,7 +57,7 @@ def power_divergence(
         Returns a tuple (chi, p_value, dof). `chi` is the
         chi-squared test statistic. The `p_value` for the test, i.e. the
         probability of observing the computed chi-square statistic (or an even
-        higher value), given the null hypothesis that X \u27C2 Y | Zs is True.
+        higher value), given the null hypothesis that X \u27c2 Y | Zs is True.
         If boolean = True, returns True if the p_value of the test is greater
         than `significance_level` else returns False.
 
@@ -112,11 +112,11 @@ def power_divergence(
                 # If one of the values is 0 in the 2x2 table.
                 if isinstance(z_state, str):
                     logging.info(
-                        f"Skipping the test {X} \u27C2 {Y} | {Z[0]}={z_state}. Not enough samples"
+                        f"Skipping the test {X} \u27c2 {Y} | {Z[0]}={z_state}. Not enough samples"
                     )
                 else:
                     z_str = ", ".join([f"{var}={state}" for var, state in zip(Z, z_state)])
-                    logging.info(f"Skipping the test {X} \u27C2 {Y} | {z_str}. Not enough samples")
+                    logging.info(f"Skipping the test {X} \u27c2 {Y} | {z_str}. Not enough samples")
 
             if np.isnan(c):
                 raise RuntimeError(
